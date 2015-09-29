@@ -106,7 +106,7 @@ var ColorList = (function(colorList) {
   function getColor_ (paletteName, colorName) {
     
     //normalize
-    var t = colorName.toLowerCase().replace(/\s/gmi,'');
+    var t = colorName.toLowerCase().replace(/\s/gmi,'').replace(/grey/gmi,"gray");
     var p = paletteName.toLowerCase().replace(/\s/gmi,'');
     
     // check it's known
