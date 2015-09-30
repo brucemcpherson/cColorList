@@ -1,16 +1,28 @@
-
-
 var ColorList = (function(colorList) {
   
   'use strict';
-  var list_ = knownPalettes();
-             
+  var list_; 
+  
+  /**
+   * allow reset of palette list
+   */
+  colorList.reset = function () {
+    list_ = KnownPalettes.generate();
+  };
+  
+  /**
+   * only gets run once
+   */
+  function init_ () {
+    if (!list_) colorList.reset();
+  }
   /**
   * get the list for a palette
   * @param {string} paletteName the name of the palette (eg Google)
   * @return {object] result object
   */
   colorList.getList = function (paletteName) {
+    init_();
     return list_[paletteName];
   };
   
@@ -19,6 +31,7 @@ var ColorList = (function(colorList) {
   * @return {[string]} result object
   */
   colorList.getPalettes = function () {
+    init_();
     return Object.keys(list_);
   };
   
@@ -29,7 +42,7 @@ var ColorList = (function(colorList) {
   * @return {object] result object
   */
   colorList.getClosest = function (paletteName, colorCode) {
-
+    
     // get the list for this paletter
     var list = colorList.getList(paletteName) ;
     if (!list) throw 'palette ' + paletteName + '  not found';
@@ -56,6 +69,7 @@ var ColorList = (function(colorList) {
   * @return {object] result object
   */
   colorList.getColor = function (paletteName, colorName) {
+    init_();
     return getColor_ (list_, text);
   };
   
@@ -68,7 +82,7 @@ var ColorList = (function(colorList) {
   colorList.getColorName = function (paletteName, colorCode) {
     
     var result, cob = new cColorMath.ColorMath(colorCode).getProperties(), cx = cob.htmlHex.toLowerCase();
-    
+    init_();
     // find the matching color by code.
     Object.keys(list_[paletteName] || {}).some(function(d) {
       if (cx ===  list_[paletteName][d].value) {
@@ -95,6 +109,7 @@ var ColorList = (function(colorList) {
   * @return {object] result object
   */
   colorList.getProps = function (colorCode) {
+    init_();
     return new cColorMath.ColorMath(colorCode);
   };
   
@@ -104,7 +119,7 @@ var ColorList = (function(colorList) {
   * @return {object] result object
   */
   function getColor_ (paletteName, colorName) {
-    
+    init_();
     //normalize
     var t = colorName.toLowerCase().replace(/\s/gmi,'').replace(/grey/gmi,"gray");
     var p = paletteName.toLowerCase().replace(/\s/gmi,'');
