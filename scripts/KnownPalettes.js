@@ -1,6 +1,6 @@
-function knownPalettes() { 
+var KnownPalettes = (function (knownPalettes) { 
   
-  var palettes = {
+  knownPalettes.palettes = {
     
     html:{
       AliceBlue:	"#F0F8FF",	
@@ -520,16 +520,21 @@ function knownPalettes() {
     
   };
   
+  knownPalettes.generate = function () {
   
-  // normalize the known palette and color names
-  return Object.keys(palettes).reduce (function (p,c) {
-    p[c.toLowerCase().replace(/\s/gmi,"")] = Object.keys(palettes[c]).reduce (function (tp,tc) {
-      tp[tc.toLowerCase().replace(/\s/gmi,"").replace(/grey/gmi,"gray")] = {name:tc, value: palettes[c][tc].toLowerCase()};
-      return tp;
+    // normalize the known palette and color names
+    return Object.keys(knownPalettes.palettes).reduce (function (p,c) {
+      p[c.toLowerCase().replace(/\s/gmi,"")] = Object.keys(knownPalettes.palettes[c]).reduce (function (tp,tc) {
+        tp[tc.toLowerCase().replace(/\s/gmi,"").replace(/grey/gmi,"gray")] = 
+          {name:tc, value: knownPalettes.palettes[c][tc].toLowerCase()};
+        return tp;
+      },{});
+      return p;
     },{});
-    return p;
-  },{});
   
+  };
   
-};
+  return knownPalettes;
+})(KnownPalettes || {});
+                     
 
