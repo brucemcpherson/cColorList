@@ -1,5 +1,5 @@
 # Google Apps Script Project: cColorList
-This repo (cColorList) was automatically updated on 29 September 2015 17:21:05 BST by GasGit
+This repo (cColorList) was automatically updated on 30 September 2015 13:42:47 BST by GasGit
 
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")
 ## Details for Apps Script project cColorList
@@ -11,6 +11,7 @@ The shared link for [cColorList is here](https://script.google.com/d/1kSRS6JmYWH
 --- | --- 
 Code| server_js
 KnownPalettes| server_js
+MaterialColors| server_js
 ### Directly referenced libraries
 *library*|*identifier*|*key*|*version*|*dev mode*|*source*|
 --- | --- | --- | --- | --- | --- 
