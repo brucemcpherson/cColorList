@@ -1,5 +1,5 @@
 # Google Apps Script Project: cColorList
-This repo (cColorList) was automatically updated on 30 September 2015 13:42:47 BST by GasGit
+This repo (cColorList) was automatically updated on 27 July 2016 10:36:32 BST by GasGit
 
 For more information see the [desktop liberation site](http://ramblings.mcpher.com/Home/excelquirks/drivesdk/gettinggithubready "desktop liberation") or [contact me on G+](https://plus.google.com/+BruceMcpherson "Bruce McPherson - GDE")
 ## Details for Apps Script project cColorList
