@@ -1,0 +1,11 @@
+{
+  "timeZone": "Europe/London",
+  "dependencies": {
+    "libraries": [{
+      "userSymbol": "cColorMath",
+      "libraryId": "18af-Zy20ZRDGR27l-kkjoPuN_g4eQ63Jn1QUWxEcX_Q4lb_qfWid5VRQ",
+      "version": "2"
+    }]
+  },
+  "exceptionLogging": "STACKDRIVER"
+}
